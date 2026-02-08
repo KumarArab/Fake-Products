@@ -1,0 +1,40 @@
+name: flutter_project
+description: Tamara Flutter Interview - Product Catalog with Installment Preview
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.8.1 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_bloc: ^8.1.6
+  equatable: 2.0.7
+
+  # Dependency Injection
+  get_it: 8.2.0
+
+  # Networking
+  dio: 5.4.0
+
+  # Image Loading
+  cached_network_image: ^3.3.0
+
+  # UI Utilities
+  cupertino_icons: ^1.0.8
+  fpdart: ^1.2.0
+  json_serializable: ^6.11.2
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: 6.0.0
+  bloc_test: 9.1.7
+  mocktail: 1.0.4
+
+flutter:
+  uses-material-design: true

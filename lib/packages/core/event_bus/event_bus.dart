@@ -9,8 +9,7 @@ class EventBus {
     _controller.add(event);
   }
 
-  Stream<T> on<T>() =>
-      _controller.stream.where((e) => e is T).cast<T>();
+  Stream<T> on<T>() => _controller.stream.where((e) => e is T).cast<T>();
 
   void dispose() {
     _controller.close();

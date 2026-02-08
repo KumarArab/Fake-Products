@@ -78,8 +78,8 @@ class ProductsView extends StatelessWidget {
           if (state.isloading)
             return Center(
               key: state.isSearchOn
-                  ? const Key("productsLoadingIndicatorKey")
-                  : const Key("searchProductsLoadingIndicatorKey"),
+                  ? const Key("searchProductsLoadingIndicatorKey")
+                  : const Key("productsLoadingIndicatorKey"),
               child: CircularProgressIndicator.adaptive(),
             );
           if (state.isSearchOn) {
@@ -90,14 +90,14 @@ class ProductsView extends StatelessWidget {
               );
             }
             return ProductsGrid(
-              key: const Key("productsGridKey"),
+              key: const Key("searchProductsGridKey"),
               products: state.searchProducts!,
               emiMonths: state.emiMonths,
             );
           } else {
             if (!state.products.isEmpty) {
               return ProductsGrid(
-                key: const Key("serachProductsGridKey"),
+                key: const Key("productsGridKey"),
                 products: state.products,
                 emiMonths: state.emiMonths,
               );

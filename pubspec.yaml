@@ -28,6 +28,7 @@ dependencies:
   fpdart: ^1.2.0
   json_serializable: ^6.11.2
   json_annotation: ^4.9.0
+  bloc_concurrency: ^0.2.5
 
 dev_dependencies:
   flutter_test:

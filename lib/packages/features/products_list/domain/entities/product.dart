@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_project/packages/core/maths/murabaha_calculator.dart';
 
-class Product {
+class Product extends Equatable {
   final int id;
   final String? title;
   final String? description;
@@ -16,6 +17,9 @@ class Product {
     required this.price,
     this.title,
   });
+
+  @override
+  List<Object?> get props => [id, title, description, price, category, image];
 
   double monthlyEmi(int months) =>
       (price + (price * MurabahaCalculator().profitMarignPercentage)) / months;

@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 @immutable
-sealed class ProductsEvent {
+class ProductsEvent {
   const ProductsEvent();
 }
 

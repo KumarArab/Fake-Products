@@ -76,23 +76,36 @@ class ProductsView extends StatelessWidget {
       child: BlocBuilder<ProductsBloc, ProductsState>(
         builder: (ctx, state) {
           if (state.isloading)
-            return Center(child: CircularProgressIndicator.adaptive());
+            return Center(
+              key: state.isSearchOn
+                  ? const Key("productsLoadingIndicatorKey")
+                  : const Key("searchProductsLoadingIndicatorKey"),
+              child: CircularProgressIndicator.adaptive(),
+            );
           if (state.isSearchOn) {
             if (state.searchProducts == null || state.searchProducts!.isEmpty) {
-              return Center(child: Text("No Products Found, try again"));
+              return Center(
+                key: const Key("noSearchProductsFoundKey"),
+                child: Text("No Products Found, try again"),
+              );
             }
             return ProductsGrid(
+              key: const Key("productsGridKey"),
               products: state.searchProducts!,
               emiMonths: state.emiMonths,
             );
           } else {
             if (!state.products.isEmpty) {
               return ProductsGrid(
+                key: const Key("serachProductsGridKey"),
                 products: state.products,
                 emiMonths: state.emiMonths,
               );
             }
-            return Center(child: Text("Wohh!! No Products Found"));
+            return Center(
+              key: const Key("noProductsFoundKey"),
+              child: Text("Wohh!! No Products Found"),
+            );
           }
         },
       ),
